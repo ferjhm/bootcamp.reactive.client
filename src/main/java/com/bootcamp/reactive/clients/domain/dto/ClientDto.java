@@ -1,39 +1,22 @@
-package com.bootcamp.reactive.clients.persistence.entities;
+package com.bootcamp.reactive.clients.domain.dto;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
+import com.bootcamp.reactive.clients.persistence.entities.ClientAddress;
 
-//@Data
-//@Builder
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@Setter
-//@Getter
+public class ClientDto {
 
-@Document(value = "clients")
-public class Client {
 
-    @Id
     private String _id;
     private String dni;
     private String name;
-
-
-    @Field(name = "edad")
     private Integer old;
-
-    @Field(name = "sexo")
     private String sex;
 
-    @Field(name = "ClientAdress")
     private ClientAddress address;
 
-
-    public Client() {
+    public ClientDto() {
     }
 
-    public Client(String _id, String dni, String name, Integer old, String sex, ClientAddress address) {
+    public ClientDto(String _id, String dni, String name, Integer old, String sex, ClientAddress address) {
         this._id = _id;
         this.dni = dni;
         this.name = name;
